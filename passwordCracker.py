@@ -1,14 +1,16 @@
+# variable to store randomly generated keys 
 dictionary = []
+# variable used in the report method to store references
 references = {}
 
-
 def randomized(x, y):
+    # method to generate a random number in a certain interval
     from random import randint
     return randint(x, y)
 
 
 def cracker_per_digit(x):
-    # crack digit per digit
+    # method to crack a password digit per digit
     lista = list(x)
     cracked = []
     tmp = 0
@@ -28,7 +30,8 @@ def cracker_per_digit(x):
 
 
 def cracker_complete_with_dict(x):
-    # crack complete password with dictionary
+    """ method to crack a password generating and checking random numbers and 
+    storing the generated numbers in a list"""
     global dictionary
     global references
     lista = list(x)
@@ -57,7 +60,8 @@ def cracker_complete_with_dict(x):
 
 
 def cracker_complete_no_dict(x):
-    # crack complete password without dictionary
+    """ method to crack a password generating and 
+    checking random numbers """
     global references
     lista = list(x)
     cracked = []
@@ -79,7 +83,7 @@ def cracker_complete_no_dict(x):
 
 
 def cracker_incrementing(x):
-    # Fastest Way to Crack a Password
+    # method to crack a password incrementing numbers
     global references
     number_int = 1
     cycle = 1
@@ -98,6 +102,7 @@ def cracker_incrementing(x):
 
 
 def report():
+    # report showing function details and results
     global references
     print("Password Cracked with dictionary")
     print("Cycle = ", references["withDict"])
