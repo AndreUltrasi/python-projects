@@ -1,3 +1,4 @@
+// verificação da equação do somatório
 print("k1 = 1")
 print("k1+ k2 +...+ m = (m*(m+1))/2")
 k = 1
