@@ -1,3 +1,4 @@
+// not working
 #Erdös Discrepancy Puzzle
 #12 moves with 5 positions
 real12 = [1,-1,-1,1,-1,1,1,-1,-1,1,1,-1]
