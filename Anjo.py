@@ -80,5 +80,57 @@ Boleto Ung
 03399.70212 17800.000170 15915.601015 8 78750000076613
 544,99
 
+
+import datetime
+from random import randint
+
+listaConcordancia = ['sim', 'claro', 'porque não', 'claramente', 'de acordo', 'por favor', 'sim por favor', 'sim, por favor', 'com certeza']
+listaNegacao = ['nao', 'nao obrigado', 'nao, obrigado', 'negativo', 'nunca']
+
+def periodo():
+    now = datetime.datetime.now()
+    if  18 >= now.hour >= 12:
+        return "Bom dia"
+    elif 12 >= now.hour >= 18:
+        return "Boa tarde"
+    else:
+        return "Boa noite"
+
+def cardapio():
+    listaPedidos = ['hamburguer', 'pizza', 'omelete', 'prato feito']
+    global listaConcordancia, listaNegacao
+    listaCardapio = ['Nós temos Hambúrgueres, Pizza, Omeletes e Pratos feitos', 'Temos as opções de Pizza, Omeletes, Hambúrgueres e Pratos feitos']
+    print(listaCardapio[randint(0,1)])
+    print("Gostaria de algumas dessas opções?")
+    x = input("")
+    for item in listaPedidos:
+        if x.lower() in listaPedidos:
+            print("Ok, iremos fazer o seu pedido")
+        else:
+            print("desculpe, nao temos essa opção")
+
+horario = periodo()
+
+while True:
+    print(horario + " !. Seja Bem-vindo ao restaurante Nova Delícias!\n\nGostaria de dar uma olhada em nosso cardápio ?")
+    x = input("")
+    
+    if x.lower() in listaConcordancia:
+        #print("Ok, Aqui esta nosso cardápio")
+        cardapio()
+        x = input("")    
+        
+    elif x.lower() in listaNegacao:
+        print("Tudo bem, caso queira pedir nosso cardápio digite 'cardapio'")
+        x = input("")
+    else:
+        print("Me desculpe, não entendi o que você quis dizer com isso")
+        x = input("")
+        
+     
+     
+     
+     
+
 """
   
