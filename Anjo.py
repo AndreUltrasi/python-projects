@@ -49,3 +49,36 @@ while True:
   salarioFinal = salario - CalculoINSS(salario) - CalculoIRFF(salario)
   
   print("O seu salário final é de: " + str(salarioFinal))
+  
+  
+"""
+  all might
+https://produto.mercadolivre.com.br/MLB-1204362386-boneco-funko-pop-my-hero-academy-all-might-figura-em-vinyl-_JM?quantity=1
+70 + 11
+de 1 a 3 dias úteis
+
+https://produto.mercadolivre.com.br/MLB-1090121448-my-hero-academia-all-might-funko-pop-_JM?matt_tool=96481908&matt_word&gclid=Cj0KCQjwkIzlBRDzARIsABgXqV-ZtkLhxcY2TOMtoLqfNdo4cOpRUXM2QCPidBRudHfTouDAUA1xn5YaAv8iEALw_wcB&quantity=1
+R$ 69,95 +  R$ 11,90
+De 1 a 3 dias úteis
+
+vegeta
+https://www.americanas.com.br/produto/18166732/boneco-vegeta-dragonball-z-funko-pop?pfm_carac=funko%20pop%20vegeta&pfm_index=0&pfm_page=search&pfm_pos=grid&pfm_type=search_page%20&sellerId
+72
+10 dias uteis
+
+https://produto.mercadolivre.com.br/MLB-1151312126-funko-pop-animation-dragonball-z-vegeta-10-_JM?matt_tool=96481908&matt_word=&gclid=Cj0KCQjwkIzlBRDzARIsABgXqV8fWUPTLdV_TJArjJxMfNVtg1GUGjgf8VxyHf0d_x3PNBNsZ4PNjkQaAnh3EALw_wcB
+70 + 11
+1 a 3 dias uteis
+
+
+dumbo
+https://produto.mercadolivre.com.br/MLB-1140513336-funko-pop-disney-series-5-dumbo-50-_JM
+83 + 14
+De 1 a 3 dias úteis
+
+Boleto Ung
+03399.70212 17800.000170 15915.601015 8 78750000076613
+544,99
+
+"""
+  
