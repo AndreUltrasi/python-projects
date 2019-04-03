@@ -3,9 +3,11 @@ import datetime
 import re
 
 listaConcordancia = ['sim', 'claro', 'porque não', 'claramente', 'de acordo', 'por favor', 'sim por favor', 'sim, por favor', 'com certeza', 'gostaria']
-listaNegacao = ['nao', 'nao obrigado', 'nao, obrigado', 'negativo', 'nunca']
+listaNegacao = ['nao', 'nao obrigado', 'nao, obrigado', 'negativo', 'nunca', 'nao quero']
 listaIndecisao = ['nao sei', 'talvez', 'depende', 'quem sabe']
 listaPedidos = ['hamburguer', 'hamburgueres', 'pizza', 'pizzas', 'omelete', 'omeletes', 'salgado', 'salgados']
+#listaComida = ['almoçar', 'comer', 'almocar', 'jantar']
+#listaNumerosExtenso = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze', 'doze', 'treze', 'quatorze', 'catorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa', 'cem']
 
 def removerAcentuacao(frase):
 	listFrase = list(frase)
@@ -57,6 +59,8 @@ class portugues:
 			return 'seu'
 		elif substantivo.endswith('os'):
 			return 'seus'
+		elif substantivo.endswith('e'):
+			return 'seu'
 		elif substantivo.endswith('es'):
 			return 'seus'
 		elif substantivo.endswith('r'):
@@ -66,6 +70,10 @@ class portugues:
 	def retornaArtigo(pedido):
 		if pedido.endswith('a'):
 			return 'a'
+		elif pedido.endswith('e'):
+			return 'o'
+		elif pedido.endswith('es'):
+			return 'os'
 		elif pedido.endswith('as'):
 			return 'as'
 		elif pedido.endswith('o'):
@@ -74,8 +82,7 @@ class portugues:
 			return 'os'
 		elif pedido.endswith('r'):
 			return 'o'
-		elif pedido.endswith('es'):
-			return 'os'
+		
 	
 	@staticmethod
 	def retornaPlural(substantivo):
@@ -104,37 +111,56 @@ class portugues:
 		return any(char.isdigit() for char in inputString)
 
 class classePedido:
-	def __init__(self, hamburger, pizza, omelete, salgado):
-		self.hamburguer = hamburger
-		self.pizza = pizza
-		self.omelete = omelete
-		self.salgado = salgado
+
+	@staticmethod
+	def GetValor(pedido):
+		if pedido in ["hamburguer", "hamburgueres"]:
+			return 3.5
+		elif pedido in ["pizza", "pizzas"]:
+			return 15.0
+		elif pedido in ["omelete", "omeletes"]:
+			return 11.0
+		elif pedido in ["salgado", "salgados"]:
+			return 4.0
+
 
 def ordenarPedido(pedido, numeroPedidos):
+
+
 	global listaPedidos
 	artigo = portugues.retornaArtigo(pedido)
 	pedidoPlural = portugues.retornaPlural(pedido)
-	seuPlural = portugues.retornaPronomeSeu(pedido)
+	pronomeSeu = portugues.retornaPronomeSeu(pedido)
 
 	if numeroPedidos != 1:
-		print(f"Como você quer {artigo} {seuPlural} {numeroPedidos[0]} {pedido}")
-		
+		valorPedido = classePedido.GetValor(pedido) * float(numeroPedidos[0])
+		valorPedido = '{:,.2f}'.format(valorPedido)
+		print(f"\n{artigo.title()} {pronomeSeu} {pedido} {numeroPedidos}ficaram no valor de R$ {valorPedido}")
+		print("Obrigado, volte sempre")
+		#print(f"Como você quer {artigo} {seuPlural} {numeroPedidos[0]} {pedido}")
+		pass
 	else:
-		print(f"Como você quer {artigo} {seuPlural} {pedido} ?")
+		valorPedido = '{:,.2f}'.format(classePedido.GetValor(pedido))
+		print(f"\n{artigo.title()} {pronomeSeu} {pedido} ficou no valor de R$ {valorPedido}")
+		print("Obrigado, volte sempre")
 
+		#print(f"Como você quer {artigo} {pronomeSeu} {pedido} ?")
+		
 
 
 def cardapio():
-	global listaConcordancia, listaNegacao, listaPedidos, listaIndecisao
-	listaCardapio = ['\nNós temos Hambúrgueres, Pizza, Omeletes e salgados', '\nTemos as opções de Pizza, Omeletes, Hambúrgueres e salgados']
+	global listaConcordancia, listaNegacao, listaPedidos, listaIndecisao, listaComida
+	listaCardapio = ['\nNós temos Hambúrgueres, Pizza, Omeletes e Salgados', '\nTemos as opções de Pizza, Omeletes, Hambúrgueres e Salgados']
 	print(listaCardapio[randint(0,1)])
 	print("O que você gostaria de pedir ?")
 	pedido = input("")
+
 	# Remove acentuações e coloca a string em minuscula
 	pedidoTratado = removerAcentuacao(pedido.lower())
 
 	if pedidoTratado in listaIndecisao:
-		print("Desculpe sou novo aqui")
+		print("Se decide !")
+		cardapio()
 	else:
 		for index, item in enumerate(listaPedidos):
 		# Verifica se possui pedido na entrada
@@ -144,14 +170,16 @@ def cardapio():
 					if re.search(r'\b' + negacao + r'\b', pedidoTratado):
 						print(f"\nSe você não gosta de {item} temos outras opções para você")
 						cardapio()
-
-					# Verifica se o cliente informou o número de pedidos
-					if portugues.temNumero(pedidoTratado):
-						numeroPedidos = re.findall(r'\d+', pedidoTratado)
-						ordenarPedido(item, numeroPedidos)
-					else: 
-						ordenarPedido(item, 1)
-					break
+					'''for comer in listaComida:
+						if re.search(r'\b' + comer + r'\b', pedidoTratado):
+							cardapioBebidas()'''
+				# Verifica se o cliente informou o número de pedidos
+				if portugues.temNumero(pedidoTratado):
+					numeroPedidos = re.findall(r'\d+', pedidoTratado)
+					ordenarPedido(item, numeroPedidos)
+				else: 
+					ordenarPedido(item, 1)
+				break
 			if index == (len(listaPedidos) - 1):
 				print("desculpe, nao temos essa opção")
 				cardapio()
@@ -167,7 +195,7 @@ while True:
 		print("Meu nome é Irineu, se você não sabe nem eu")
 		opcao = input("")
 
-	if opcaoTratada in listaConcordancia:
+	elif opcaoTratada in listaConcordancia:
 		cardapio()
 		opcao = input("")   
 	elif opcaoTratada in listaNegacao:
@@ -175,5 +203,4 @@ while True:
 		opcao = input("")
 
 	else:
-		print(opcaoTratada)
 		print("\nMe desculpe, não entendi o que você quis dizer com isso, seja mais claro")
