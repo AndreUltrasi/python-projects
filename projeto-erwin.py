@@ -16,30 +16,47 @@ def periodo():
 listaConcordancia = ['sim', 'claro', 'porque não', 'claramente', 'de acordo', 'por favor', 'sim por favor', 'sim, por favor', 'com certeza', 'gostaria']
 listaNegacao = ['nao', 'nao obrigado', 'nao, obrigado', 'negativo', 'nunca']
 
+listaIndecisao = ['nao sei', 'talvez', 'depende', 'quem sabe']
+
 listaPedidos = ['hamburguer', 'hamburgueres', 'pizza', 'pizzas', 'omelete', 'omeletes', 'salgado', 'salgados']
 
-def generoENumeroPalavra(pedido):
-  if pedido == 'hamburger':
-    return 'o'
-  elif pedido == 'pizza':
-    return 'a'
-  elif pedido == 'omelete':
-    return 'o'
-  elif pedido == 'salgado':
-    return 'o'
-
-def ordenarPedido(pedido):
-  global listaPedidos
-  if pedido.endswith('es'):
-    pedido = pedido
+def pluralPedido(pedido):
   if pedido.endswith('s'):
-    print("")
+    return pedido
+  if pedido.endswith('uer'):
+    return pedido + "es"
+  elif pedido == 's':
+    return pedido + 's'
 
-  #print(f"Quant{genero}s  você quer ?")
+def singularPedido(pedido):
+  if pedido.endswith('es'):
+    return pedido[:-2]
+  elif pedido == 's':
+    return pedido[:-1]
 
+def generoPedido(pedido):
+  print(pedido)
+  if pedido.endswith('a'):
+    return 'a'
+  else:
+    return 'o'
+
+def hasNumbers(inputString):
+  return any(char.isdigit() for char in inputString)
+
+def ordenarPedido(pedido, numeroPedidos):
+  global listaPedidos
+  genero = generoPedido(pedido)
+  pedidoPlural = pluralPedido(pedido)
+  print("numero"+numeroPedidos)
+  if numeroPedidos != 1:
+    print(f"Como você quer o seu {pedido}")
+
+  else:
+    print(f"Quant{genero}s {pedidoPlural} você quer ?")
 
 def cardapio():
-    global listaConcordancia, listaNegacao, listaPedidos
+    global listaConcordancia, listaNegacao, listaPedidos, listaIndecisao
     listaCardapio = ['\nNós temos Hambúrgueres, Pizza, Omeletes e salgados', '\nTemos as opções de Pizza, Omeletes, Hambúrgueres e salgados']
 
     print(listaCardapio[randint(0,1)])
@@ -49,24 +66,29 @@ def cardapio():
     # Remove acentuações e coloca a string em minuscula
     pedidoTratado = unidecode.unidecode(pedido.lower())
 
-    # Verifica se o texto inserido possui o pedido indica com regex tratando para pegar a palavra inteira
-    for index, item in enumerate(listaPedidos):
-        # Verifica se possui pedido na entrada
-        if re.search(r'\b' + item + r'\b', pedidoTratado):
-            # Verifica se possui negacao antes do pedido
-            for negacao in listaNegacao:
-              if re.search(r'\b' + negacao + r'\b', pedidoTratado):
-                print(f"\nSe você não gosta de {item} temos outras opções para você")
-                cardapio()
-            ordenarPedido(item)
-            break
+    if pedidoTratado in listaIndecisao:
+      print("Desculpe sou novo aqui")
+    else:
+      # Verifica se o texto inserido possui o pedido indica com regex tratando para pegar a palavra inteira
+      for index, item in enumerate(listaPedidos):
+          # Verifica se possui pedido na entrada
+          if re.search(r'\b' + item + r'\b', pedidoTratado):
+              # Verifica se possui negacao antes do pedido
+              for negacao in listaNegacao:
+                if re.search(r'\b' + negacao + r'\b', pedidoTratado):
+                  print(f"\nSe você não gosta de {item} temos outras opções para você")
+                  cardapio()
 
-        if index == (len(listaPedidos) - 1):
-            print("desculpe, nao temos essa opção")
-            cardapio()
-        
-
-
+              if hasNumbers(pedidoTratado):
+                  print(pedidoTratado)
+                  ordenarPedido(item, numeroPedidos)
+              else: 
+                ordenarPedido(item, 1)
+              break
+          if index == (len(listaPedidos) - 1):
+              print("desculpe, nao temos essa opção")
+              cardapio()
+          
 
 horario = periodo()
 while True:
@@ -74,13 +96,19 @@ while True:
     opcao = input("")
     opcaoTratada = unidecode.unidecode(opcao.lower())
 
+    if opcaoTratada in listaIndecisao:
+      print("Meu nome é Irineu, se você não sabe nem eu")
+      opcao = input("")
+
     if opcaoTratada in listaConcordancia:
         cardapio()
         opcao = input("")    
         
     elif opcaoTratada in listaNegacao:
-        print("Tudo bem, caso queira pedir nosso cardápio digite 'cardapio'")
-        opcao = input("")
+      print("Meu nome é Ari e eu não to nem ai, agora vai embora")
+      opcao = input("")
+      
+
     else:
-        print("Me desculpe, não entendi o que você quis dizer com isso")
-        opcao = input("")
+      print(opcaoTratada)
+      print("\nMe desculpe, não entendi o que você quis dizer com isso, seja mais claro")
