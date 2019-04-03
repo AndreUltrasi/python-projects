@@ -135,7 +135,7 @@ def ordenarPedido(pedido, numeroPedidos):
 	if numeroPedidos != 1:
 		valorPedido = classePedido.GetValor(pedido) * float(numeroPedidos[0])
 		valorPedido = '{:,.2f}'.format(valorPedido)
-		print(f"\n{artigo.title()} {pronomeSeu} {pedido} {numeroPedidos}ficaram no valor de R$ {valorPedido}")
+		print(f"\n{artigo.title()} {pronomeSeu} {pedido} {numeroPedidos[0]} ficaram no valor de R$ {valorPedido}")
 		print("Obrigado, volte sempre")
 		#print(f"Como você quer {artigo} {seuPlural} {numeroPedidos[0]} {pedido}")
 		pass
