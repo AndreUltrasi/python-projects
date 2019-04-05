@@ -133,5 +133,6 @@ while True:
      
 https://docs.microsoft.com/pt-br/aspnet/core/tutorials/signalr?tabs=visual-studio&view=aspnetcore-2.2
 https://www.fabiosilvalima.net/design-patterns-no-mundo-real/
+https://scottlilly.com/how-to-create-a-fluent-interface-in-c/
 """
   
