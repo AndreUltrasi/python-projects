@@ -1,3 +1,33 @@
-git
-03399.70212 17800.000188 18410.301016 2 79660000076613
-R$ 544,99
+https://www.vagas.com.br/vagas/v1901416/estagio-em-logistica
+https://www.vagas.com.br/vagas/v1907106/estagio-em-administracao
+https://www.vagas.com.br/vagas/v1904809/estagiario-de-administracao
+https://www.vagas.com.br/vagas/v1914048/estagiario-de-suprimentos
+https://www.vagas.com.br/vagas/v1914029/estagio-gestao
+https://www.vagas.com.br/vagas/v1906546/estagio-administrativo
+https://www.vagas.com.br/vagas/v1905542/estagio-em-logistica-importacao-e-exportacao-sao-paulo
+https://www.vagas.com.br/vagas/v1902862/estagiario-de-gestao-de-energia
+https://www.vagas.com.br/vagas/v1901587/estagio-administrativo-em-recursos-humanos
+https://www.vagas.com.br/vagas/v1916596/estagio-em-tecnico-em-administracao-neuro-care
+https://www.vagas.com.br/vagas/v1908149/estagiario-de-compras
+https://www.vagas.com.br/vagas/v1912971/estagio-em-importacoes
+https://www.vagas.com.br/vagas/v1910158/estagio-em-supply-chain
+https://www.vagas.com.br/vagas/v1904965/estagio-areas-diversas
+https://www.vagas.com.br/vagas/v1903944/estagiario-comunicacao-interna
+
+https://www.linkedin.com/jobs/view/1331393910/?eBP=CwEAAAFrszvZqBQUU0hr5EZRgHy9Hrqt4nQhBkHn9HFo-RvuPTmI6LZ0ZTfcITZ0JieMNFjxKfwBAvmpvyc4o0AMPJcwfq1NyDWHpcT1EKyy_f7wNts2p9BrnCeWFLCs2TRwETnfms9jCMfdrtyqGFrVPpIqXOKSh995Uc27bQ3uA7DrXcp_cl7ZW5HDIuSXkneA5BcwoOynFLiL8mKlOmkvVpoVJ1yk1MkNicQ8OdvICZe9Wuy4BChTxOSxM52Y5V_viECCewksq_CoONsaEsHa9xILjZIKMEjuKZyai_7VEYbEGHfRkr52SLA0sStgNGBi56mZysrRxyEfdE5evCWomfqG1AeNfOJtCWlClfOmkUukYZNWdiEY1MAN8CRSrLF8rm9yadKlKK299-ArsQBN9Q&recommendedFlavor=SCHOOL_RECRUIT&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1322933026/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=SCHOOL_RECRUIT&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1319755954/?eBP=NotAvailableFromVoyagerAPI&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1326622524/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=SCHOOL_RECRUIT&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1348083876/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=HIDDEN_GEM&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1304539659/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=SCHOOL_RECRUIT&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1321617602/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=SCHOOL_RECRUIT&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1311137824/?eBP=NotAvailableFromVoyagerAPI&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1318858220/?eBP=NotAvailableFromVoyagerAPI&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1326607678/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=SCHOOL_RECRUIT&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1321302474/?eBP=NotAvailableFromVoyagerAPI&refId=c395d435-ead2-4af3-9c67-436a2dbe621e&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1300735291/?eBP=NotAvailableFromVoyagerAPI&refId=2d99e806-8e59-4919-a2e9-d3cea5ba4317&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1349419145/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=HIDDEN_GEM&refId=2d99e806-8e59-4919-a2e9-d3cea5ba4317&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1279064328/?eBP=NotAvailableFromVoyagerAPI&refId=2d99e806-8e59-4919-a2e9-d3cea5ba4317&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1327212965/?eBP=NotAvailableFromVoyagerAPI&recommendedFlavor=HIDDEN_GEM&refId=2d99e806-8e59-4919-a2e9-d3cea5ba4317&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1292874349/?eBP=NotAvailableFromVoyagerAPI&refId=2d99e806-8e59-4919-a2e9-d3cea5ba4317&trk=d_flagship3_search_srp_jobs
+https://www.linkedin.com/jobs/view/1350365311/?eBP=NotAvailableFromVoyagerAPI&refId=2d99e806-8e59-4919-a2e9-d3cea5ba4317&trk=d_flagship3_search_srp_jobs
