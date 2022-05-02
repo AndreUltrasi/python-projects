@@ -1,8 +1,4 @@
-# variable to store randomly generated keys 
-dictionary = []
-# variable used in the report method to store references
-references = {}
-
+import time
 
 def randomized(x, y):
     # method to generate a random number in a certain interval
@@ -12,6 +8,7 @@ def randomized(x, y):
 
 def cracker_per_digit(x):
     # method to crack a password digit per digit
+    start = time.time()
     lista = list(x)
     cracked = []
     tmp = 0
@@ -29,12 +26,15 @@ def cracker_per_digit(x):
             break
         cycle += 1
 
+    end = time.time()
+    return (end - start, cycle)
+
 
 def cracker_complete_with_dict(x):
     """ method to crack a password generating and checking random numbers and 
     storing the generated numbers in a list"""
-    global dictionary
-    global references
+    dictionary = []
+    start = time.time()
     lista = list(x)
     cracked = []
     cycle = 1
@@ -46,8 +46,6 @@ def cracker_complete_with_dict(x):
             print("Cycle: ", cycle)
             print(cracked)
             print("length dictionary: ", len(dictionary))
-            references["withDict"] = cycle
-            references["length"] = len(dictionary)
             break
         if len(cracked) == len(lista):
             if cracked in dictionary:
@@ -59,11 +57,13 @@ def cracker_complete_with_dict(x):
                 cracked = []
                 cycle += 1
 
+    end = time.time()
+    return (end - start, cycle, len(dictionary))
 
 def cracker_complete_no_dict(x):
     """ method to crack a password generating and 
     checking random numbers """
-    global references
+    start = time.time()
     lista = list(x)
     cracked = []
     cycle = 1
@@ -74,7 +74,6 @@ def cracker_complete_no_dict(x):
         if cracked == lista:
             print("Cycle: ", cycle)
             print(cracked)
-            references["noDict"] = cycle
             break
         if len(cracked) == len(lista):
             print("Cycle =", cycle)
@@ -82,10 +81,13 @@ def cracker_complete_no_dict(x):
             cracked = []
             cycle += 1
 
+    end = time.time()
+    return (end - start, cycle)
+
 
 def cracker_incrementing(x):
     # method to crack a password incrementing numbers
-    global references
+    start = time.time()
     number_int = 1
     cycle = 1
     print("Cracking password incrementing digits")
@@ -94,29 +96,25 @@ def cracker_incrementing(x):
         if number_str == x:
             print("Cycle = ", cycle)
             print(number_str)
-            references["incrementing"] = cycle
             break
         print("Cycle =", cycle)
         print(number_str)
         number_int += 1
         cycle += 1
 
-
-def report():
-    # report showing function details and results
-    global references
-    print("Password Cracked with dictionary")
-    print("Cycle = ", references["withDict"])
-    print("Dictionary Length = ", references["length"])
-    print("\nPassword Cracked without dictionary")
-    print("Cycle = ", references["noDict"])
-    print("\nPassword Cracked Incrementing")
-    print("Cycle =", references["incrementing"])
+    end = time.time()
+    return (end - start, cycle)
+        
 
 while True:
     password = str(input("Type a password made of numbers: "))
-    cracker_complete_no_dict(password)
-    cracker_complete_with_dict(password)
-    cracker_incrementing(password)
-    cracker_per_digit(password)
-    report()
+    (elapsedTimeNoDict, cyclesNoDict) = cracker_complete_no_dict(password)
+    (elapsedTimeWithDict, cyclesWithDict, DictSize) = cracker_complete_with_dict(password)
+    (elapsedTimeIncrementing, cyclesincrementing) = cracker_incrementing(password)
+    (elapsedTimePerDigit, cyclesPerDigit) = cracker_per_digit(password)
+    
+    print(f"Password cracked without dictionary in {elapsedTimeNoDict} seconds in {cyclesNoDict} tries")
+    print(f"Password cracked with dictionary in {elapsedTimeWithDict} seconds in {cyclesWithDict} tries and with dictionary with {DictSize} elements")
+    print(f"Password cracked incremeting in {elapsedTimeIncrementing} seconds in {cyclesincrementing} tries")
+    print(f"Password cracked per digit in {elapsedTimePerDigit} seconds in {cyclesPerDigit} tries")
+    print("\n")
