@@ -117,4 +117,5 @@ while True:
     print(f"Password cracked with dictionary in {elapsedTimeWithDict} seconds in {cyclesWithDict} tries and with dictionary with {DictSize} elements")
     print(f"Password cracked incremeting in {elapsedTimeIncrementing} seconds in {cyclesincrementing} tries")
     print(f"Password cracked per digit in {elapsedTimePerDigit} seconds in {cyclesPerDigit} tries")
+    print(f"Password cracked per digit in {elapsedTimePerDigit} seconds in {cyclesPerDigit} tries")
     print("\n")
